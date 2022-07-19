@@ -1,0 +1,22 @@
+{% extends 'base.html' %}{% block title %}{{ contact['firstName'] + " " + contact['lastName'] }}{% endblock %}
+
+{% block content %}
+    <br/>
+    <div class="from-display">
+        <div class="form-group">
+            <td class="label">First name:</label>
+            <td id="fname" name="fname">{{ contact['firstName']}}</td>
+        </div>
+        <div class="form-group">
+            <td class="label">Last name:</label>
+            <td id="lname" name="lname">{{ contact['lastName']}}</td>
+        </div>
+        <div class="form-group">
+            <td class="label">Date of birth:</label>
+            <td id="dob" name="dob">{{ contact['dob']}}</td>
+        </div>
+        <a href={{ url_for('views.editContact', contact_id=contact['id']) }}>
+            <button class="editButton" style="height:75px;width:150px">Edit</button>
+        </a>
+    </div>
+{% endblock %}
